@@ -452,5 +452,34 @@
     </div>
   </div>
   <!-- End Footer -->
+  
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menikah.js"></script>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      easing: "ease-out",
+      duration: 800,
+    });
+
+    // Memilih semua elemen navbar yang memiliki tautan ke bagian-bagian halaman
+  const navbarLinks = document.querySelectorAll('.hero-menu-desktop a');
+
+// Menambahkan penanganan klik pada setiap tautan navbar
+navbarLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // Menghentikan perilaku tautan standar
+
+    const targetId = link.getAttribute('href'); // Mengambil nilai href tautan
+
+    // Menggulir ke elemen dengan id yang sesuai dengan tautan yang diklik
+    document.querySelector(targetId).scrollIntoView({
+      behavior: 'smooth', // Mengaktifkan scroll yang halus
+    });
+  });
+});
+  </script>
 </body>
 </html>
